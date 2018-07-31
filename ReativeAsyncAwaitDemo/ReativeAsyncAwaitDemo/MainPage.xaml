@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ReativeAsyncAwaitDemo"
+             xmlns:forms="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
              x:Class="ReativeAsyncAwaitDemo.MainPage">
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -11,12 +12,19 @@
     <ScrollView>
         <StackLayout>
             <!-- Place new controls here -->
-            <Label Text="Dummy Web Search Demo" 
+            <Label Text="DuckDuckGo Web Search Demo" 
                HorizontalOptions="Center"
-               VerticalOptions="StartAndExpand" />
-            <Entry HorizontalOptions="CenterAndExpand" VerticalOptions="Start" x:Name="SerachEntry"></Entry>
+               VerticalOptions="Start" />
+            <forms:AutoSuggestBox VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" 
+                                  x:Name="SearchTextBox" 
+                                  PlaceholderText="Enter text to Search" 
+                                  WidthRequest="300"
+                                  TextChanged="AutoSuggestBox_TextChanged"
+                                  DisplayMemberPath="Text"
+                                  TextMemberPath="Text"
+                                  QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+                                  SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
         </StackLayout>
-
     </ScrollView>
 
 </ContentPage>
