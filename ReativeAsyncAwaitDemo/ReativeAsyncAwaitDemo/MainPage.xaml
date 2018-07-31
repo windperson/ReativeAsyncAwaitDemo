@@ -19,11 +19,9 @@
                                   x:Name="SearchTextBox" 
                                   PlaceholderText="Enter text to Search" 
                                   WidthRequest="300"
-                                  TextChanged="AutoSuggestBox_TextChanged"
                                   DisplayMemberPath="Text"
                                   TextMemberPath="Text"
-                                  QuerySubmitted="AutoSuggestBox_QuerySubmitted"
-                                  SuggestionChosen="AutoSuggestBox_SuggestionChosen"/>
+                                  />
         </StackLayout>
     </ScrollView>
 
