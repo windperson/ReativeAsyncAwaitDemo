@@ -3,12 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ReativeAsyncAwaitDemo"
              x:Class="ReativeAsyncAwaitDemo.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0,20,0,0"></On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ScrollView>
+        <StackLayout>
+            <!-- Place new controls here -->
+            <Label Text="Dummy Web Search Demo" 
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand" />
+            <Entry HorizontalOptions="CenterAndExpand" VerticalOptions="Start" x:Name="SerachEntry"></Entry>
+        </StackLayout>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    </ScrollView>
 
 </ContentPage>
